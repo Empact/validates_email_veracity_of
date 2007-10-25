@@ -1,0 +1,39 @@
+Validates Email Veracity Of
+===========================
+
+Author: Carsten Nielsen <heycarsten@gmail.com>
+
+Validates an email address for well-formedness and verifies it's domain by checking if there are
+any mail servers associated with it.
+
+
+== Options
+
+ * message
+   - Changes the default error message.
+ * skip_remote
+   - Skips the domain lookup.
+ * timeout
+   - (seconds) Time before the domain lookup is skipped. Default is 2.
+ * fail_on_timeout
+   - Causes validation to fail if a timeout occurs.
+ * timeout_message
+   - Changes the default timeout error message.
+
+
+== Examples
+
+ * validates_email_veracity_of :email, :message => 'is not correct.'
+   - Changes the default error message from 'is invalid.' to 'is not correct.'
+ * validates_email_veracity_of :email, :skip_remote => true
+   - Domain lookup is skipped.
+ * validates_email_veracity_of :email, :timeout => 0.5
+   - Causes the domain lookup to timeout if it does not complete within half a second.
+ * validates_email_veracity_of :email, :fail_on_timeout => true, :timeout_message => 'is invalid.'
+   - Causes the validation to fail on timeout and changes the error message to 'is invalid.' to obfuscate it.
+
+
+== Running The Tests
+
+ * You will need to use a computer with an internet connection to utilize the remote features.
+ * To run the validates_email_veracity_of_test you will need to have the plugin installed in a Rails project.
