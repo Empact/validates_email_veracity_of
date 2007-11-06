@@ -23,9 +23,9 @@ class ValidatesEmailVeracityOf
       self.name = name
     end
     
+    # Returns an array of mail server objects for the provided domain, if the domain
+    # does not exist, it will return an empty array. If it times out, nil is returned.
     def mail_servers(options = {})
-      # Returns an array of mail server objects for the provided domain, if the domain
-      # does not exist, it will return an empty array. If it times out, nil is returned.
       st = Timeout::timeout(options.fetch(:timeout, 2)) do
         dns = Resolv::DNS.new
         type = Resolv::DNS::Resource::IN::MX
@@ -46,9 +46,9 @@ class ValidatesEmailVeracityOf
       self.address = email
     end
     
+    # Domains that we know have mail servers
     def self.known_domains
-      # Domains that we know have mail servers
-      %w[ hotmail.com gmail.com rogers.com mac.com sympatico.ca msn.ca ]
+      %w[ hotmail.com gmail.com rogers.com mac.com sympatico.ca msn.com ]
     end
     
     def domain
@@ -59,11 +59,11 @@ class ValidatesEmailVeracityOf
       address =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
     end
     
+    # Checks if the email address' domain has any mail servers associated to it,
+    # if it does then it will return true, if it does not then it will return false
+    # if it times out, it will return false or nil if the fail_on_timeout option is
+    # specified.
     def domain_has_mail_servers?(options = {})
-      # Checks if the email address' domain has any mail servers associated to it,
-      # if it does then it will return true, if it does not then it will return false
-      # if it times out, it will return false or nil if the fail_on_timeout option is
-      # specified.
       return true if EmailAddress.known_domains.include?(domain.name.downcase)
       mail_servers = domain.mail_servers(options)
       if mail_servers.nil?

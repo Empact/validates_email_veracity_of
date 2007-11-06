@@ -1,7 +1,7 @@
-Validates Email Veracity Of
-===========================
+= Validates Email Veracity Of
 
-Author: Carsten Nielsen <heycarsten@gmail.com>
+Author:: Carsten Nielsen (mailto:carsten.nielsen@savvica.com)
+License:: MIT
 
 Validates an email address for well-formedness and verifies it's domain by checking if there are
 any mail servers associated with it.
@@ -9,31 +9,32 @@ any mail servers associated with it.
 
 == Options
 
- * message
-   - Changes the default error message.
- * skip_remote
-   - Skips the domain lookup.
- * timeout
-   - (seconds) Time before the domain lookup is skipped. Default is 2.
- * fail_on_timeout
-   - Causes validation to fail if a timeout occurs.
- * timeout_message
-   - Changes the default timeout error message.
+* *message*
+  - Changes the default error message.
+* *domain_check*
+  - Skips domain MX lookup unless true.
+* *timeout*
+  - Time (in seconds) before the domain lookup is skipped. Default is 2.
+* *fail_on_timeout*
+  - Causes validation to fail if a timeout occurs.
+* *timeout_message*
+  - Changes the default timeout error message.
 
 
 == Examples
 
- * validates_email_veracity_of :email, :message => 'is not correct.'
-   - Changes the default error message from 'is invalid.' to 'is not correct.'
- * validates_email_veracity_of :email, :skip_remote => true
-   - Domain lookup is skipped.
- * validates_email_veracity_of :email, :timeout => 0.5
-   - Causes the domain lookup to timeout if it does not complete within half a second.
- * validates_email_veracity_of :email, :fail_on_timeout => true, :timeout_message => 'is invalid.'
-   - Causes the validation to fail on timeout and changes the error message to 'is invalid.' to obfuscate it.
+* <tt>validates_email_veracity_of :email_address, :message => 'is not correct.'</tt>
+  - Changes the default error message from 'is invalid.' to 'is not correct.'
+* <tt>validates_email_veracity_of :email, :domain_check => false</tt>
+  - Domain MX lookup is skipped.
+* <tt>validates_email_veracity_of :email, :timeout => 0.5</tt>
+  - Causes the domain lookup to timeout if it does not complete within half a second.
+* <tt>validates_email_veracity_of :email, :fail_on_timeout => true, :timeout_message => 'is invalid.'</tt>
+  - Causes the validation to fail on timeout and changes the error message to 'is invalid.'
+    to obfuscate it.
 
 
 == Running The Tests
 
- * You will need to use a computer with an internet connection to utilize the remote features.
- * To run the validates_email_veracity_of_test you will need to have the plugin installed in a Rails project.
+* You will need to be connected to the internet to utilize the remote features.
+  - <tt>> rake test</tt>
