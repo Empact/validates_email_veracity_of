@@ -1,0 +1,705 @@
+# Logfile created on Tue Nov 06 17:49:18 -0500 2007 by /
+Dependencies: called new_constants_in(Object)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb", ["Application", "ApplicationController", "Controllers::Application"])
+Dependencies: called new_constants_in(:Object, :Object, "Controllers")
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb", ["Helpers::ApplicationHelper", "ApplicationHelper"])
+Dependencies: called new_constants_in("Helpers", :Object)
+Dependencies: New constants: ApplicationHelper
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb defined ApplicationHelper
+Dependencies: called require_or_load("application_api", nil)
+Dependencies: loading application_api
+Dependencies: called load_file("application_api.rb", [])
+Dependencies: called new_constants_in()
+Dependencies: New constants: 
+Dependencies: Error during loading, removing partially loaded constants 
+Dependencies: New constants: ApplicationController
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb defined ApplicationController
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: CSV
+Dependencies: New constants: FixtureClassNotFound, Fixture, Fixtures
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: Tempfile
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Dispatcher
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Exception2MessageMapper
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: IRB
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: SLex
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: RubyToken
+Dependencies: New constants: RubyLex
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Readline
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: Error during loading, removing partially loaded constants 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: IPAddr
+Dependencies: New constants: ACL
+Dependencies: New constants: Breakpoint
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: SQLite3
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: SWIG
+Dependencies: New constants: 
+  [4;36;1mSQL (0.004425)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.003299)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: CreateEmails
+Dependencies: called load_missing_constant(Object, :CreateEmail)
+Dependencies: called new_constants_in(Object)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb", ["Application", "ApplicationController", "Controllers::Application"])
+Dependencies: called new_constants_in(:Object, :Object, "Controllers")
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb", ["Helpers::ApplicationHelper", "ApplicationHelper"])
+Dependencies: called new_constants_in("Helpers", :Object)
+Dependencies: New constants: ApplicationHelper
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb defined ApplicationHelper
+Dependencies: called require_or_load("application_api", nil)
+Dependencies: loading application_api
+Dependencies: called load_file("application_api.rb", [])
+Dependencies: called new_constants_in()
+Dependencies: New constants: 
+Dependencies: Error during loading, removing partially loaded constants 
+Dependencies: New constants: ApplicationController
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb defined ApplicationController
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: CSV
+Dependencies: New constants: FixtureClassNotFound, Fixture, Fixtures
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: Tempfile
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Dispatcher
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Exception2MessageMapper
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: IRB
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: SLex
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: RubyToken
+Dependencies: New constants: RubyLex
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Readline
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: Error during loading, removing partially loaded constants 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: IPAddr
+Dependencies: New constants: ACL
+Dependencies: New constants: Breakpoint
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: SQLite3
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: SWIG
+Dependencies: New constants: 
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: CreateEmails
+  [4;36;1mSQL (0.000375)[0m   [0;1mSELECT version FROM schema_info[0m
+Migrating to CreateEmails (1)
+  [4;35;1mSQL (0.003667)[0m   [0mCREATE TABLE emails ("id" INTEGER PRIMARY KEY NOT NULL, "address" varchar(255) DEFAULT NULL) [0m
+  [4;36;1mSQL (0.003590)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called load_missing_constant(ValidatesEmailVeracityOfTest, :EmailFailOnTimeout)
+Dependencies: called load_missing_constant(Object, :EmailFailOnTimeout)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_fail_on_timeout.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_fail_on_timeout
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_fail_on_timeout.rb", ["Models::EmailFailOnTimeout", "EmailFailOnTimeout"])
+Dependencies: called new_constants_in("Models", :Object)
+Dependencies: New constants: EmailFailOnTimeout
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_fail_on_timeout.rb defined EmailFailOnTimeout
+Dependencies: called load_missing_constant(ValidatesEmailVeracityOfTest, :EmailTimeout)
+Dependencies: called load_missing_constant(Object, :EmailTimeout)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_timeout.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_timeout
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_timeout.rb", ["Models::EmailTimeout", "EmailTimeout"])
+Dependencies: called new_constants_in("Models", :Object)
+Dependencies: New constants: EmailTimeout
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_timeout.rb defined EmailTimeout
+Dependencies: called load_missing_constant(ValidatesEmailVeracityOfTest, :Email)
+Dependencies: called load_missing_constant(Object, :Email)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email.rb", ["Models::Email", "Email"])
+Dependencies: called new_constants_in("Models", :Object)
+Dependencies: New constants: Email
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email.rb defined Email
+Dependencies: called load_missing_constant(ValidatesEmailVeracityOfTest, :EmailSkipRemote)
+Dependencies: called load_missing_constant(Object, :EmailSkipRemote)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_skip_remote.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_skip_remote
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_skip_remote.rb", ["Models::EmailSkipRemote", "EmailSkipRemote"])
+Dependencies: called new_constants_in("Models", :Object)
+Dependencies: New constants: EmailSkipRemote
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_skip_remote.rb defined EmailSkipRemote
+Dependencies: called new_constants_in(Object)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb", ["Application", "ApplicationController", "Controllers::Application"])
+Dependencies: called new_constants_in(:Object, :Object, "Controllers")
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb", ["Helpers::ApplicationHelper", "ApplicationHelper"])
+Dependencies: called new_constants_in("Helpers", :Object)
+Dependencies: New constants: ApplicationHelper
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/helpers/application_helper.rb defined ApplicationHelper
+Dependencies: called require_or_load("application_api", nil)
+Dependencies: loading application_api
+Dependencies: called load_file("application_api.rb", [])
+Dependencies: called new_constants_in()
+Dependencies: New constants: 
+Dependencies: Error during loading, removing partially loaded constants 
+Dependencies: New constants: ApplicationController
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/controllers/application.rb defined ApplicationController
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: CSV
+Dependencies: New constants: FixtureClassNotFound, Fixture, Fixtures
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: Tempfile
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Dispatcher
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Exception2MessageMapper
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: IRB
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: SLex
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: RubyToken
+Dependencies: New constants: RubyLex
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: Readline
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: Error during loading, removing partially loaded constants 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: IPAddr
+Dependencies: New constants: ACL
+Dependencies: New constants: Breakpoint
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: SQLite3
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: SWIG
+Dependencies: New constants: 
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: CreateEmails
+  [4;36;1mSQL (0.000262)[0m   [0;1mSELECT version FROM schema_info[0m
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: ValidatesEmailVeracityOfTest
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: 
+Dependencies: called load_missing_constant(DomainTest, :ValidatesEmailVeracityOf)
+Dependencies: called load_missing_constant(Object, :ValidatesEmailVeracityOf)
+Dependencies: called require_or_load("./test/unit/../rails_root/config/../../../lib/validates_email_veracity_of.rb", nil)
+Dependencies: loading ./test/unit/../rails_root/config/../../../lib/validates_email_veracity_of
+Dependencies: called load_file("./test/unit/../rails_root/config/../../../lib/validates_email_veracity_of.rb", ["ValidatesEmailVeracityOf"])
+Dependencies: called new_constants_in(:Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: Resolv
+Dependencies: called new_constants_in(Object)
+Dependencies: New constants: 
+Dependencies: New constants: ValidatesEmailVeracityOf
+Dependencies: loading ./test/unit/../rails_root/config/../../../lib/validates_email_veracity_of.rb defined ValidatesEmailVeracityOf
+Dependencies: called load_missing_constant(ValidatesEmailVeracityOfTest, :EmailFailOnTimeout)
+Dependencies: called load_missing_constant(Object, :EmailFailOnTimeout)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_fail_on_timeout.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_fail_on_timeout
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_fail_on_timeout.rb", ["Models::EmailFailOnTimeout", "EmailFailOnTimeout"])
+Dependencies: called new_constants_in("Models", :Object)
+Dependencies: New constants: EmailFailOnTimeout
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_fail_on_timeout.rb defined EmailFailOnTimeout
+Dependencies: called load_missing_constant(ValidatesEmailVeracityOfTest, :EmailTimeout)
+Dependencies: called load_missing_constant(Object, :EmailTimeout)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_timeout.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_timeout
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_timeout.rb", ["Models::EmailTimeout", "EmailTimeout"])
+Dependencies: called new_constants_in("Models", :Object)
+Dependencies: New constants: EmailTimeout
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_timeout.rb defined EmailTimeout
+Dependencies: called load_missing_constant(ValidatesEmailVeracityOfTest, :Email)
+Dependencies: called load_missing_constant(Object, :Email)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email.rb", ["Models::Email", "Email"])
+Dependencies: called new_constants_in("Models", :Object)
+Dependencies: New constants: Email
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email.rb defined Email
+Dependencies: called load_missing_constant(ValidatesEmailVeracityOfTest, :EmailSkipRemote)
+Dependencies: called load_missing_constant(Object, :EmailSkipRemote)
+Dependencies: called require_or_load("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_skip_remote.rb", nil)
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_skip_remote
+Dependencies: called load_file("/Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_skip_remote.rb", ["Models::EmailSkipRemote", "EmailSkipRemote"])
+Dependencies: called new_constants_in("Models", :Object)
+Dependencies: New constants: EmailSkipRemote
+Dependencies: loading /Users/wesleymoxam/projects/savvica/public/plugins/validates_email_veracity_of/test/rails_root/app/models/email_skip_remote.rb defined EmailSkipRemote

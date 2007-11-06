@@ -1,36 +1,5 @@
-dir = File.dirname(__FILE__)
-$LOAD_PATH << dir unless $LOAD_PATH.include?(dir)
 require 'test/unit'
-require 'test/rails_root/config/environment'
-require 'active_record'
-require 'lib/validates_email_veracity_of'
-require 'lib/extensions'
-
-
-class Email < ActiveRecord::Base
-  def self.columns; []; end
-  attr_accessor :address
-  validates_email_veracity_of :address
-end
-
-class EmailSkipRemote < ActiveRecord::Base
-  def self.columns; []; end
-  attr_accessor :address
-  validates_email_veracity_of :address, :domain_check => false
-end
-
-class EmailTimeout < ActiveRecord::Base
-  def self.columns; []; end
-  attr_accessor :address
-  validates_email_veracity_of :address, :timeout => 0.0001
-end
-
-class EmailFailOnTimeout < ActiveRecord::Base
-  def self.columns; []; end
-  attr_accessor :address
-  validates_email_veracity_of :address, :fail_on_timeout => true, :timeout => 0.0001
-end
-
+require File.dirname(__FILE__) + '/../test_helper'
 
 class ValidatesEmailVeracityOfTest < Test::Unit::TestCase
   
