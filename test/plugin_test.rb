@@ -1,8 +1,10 @@
-require './rails_root/config/environment'
-require 'active_record'
-require '../lib/validates_email_veracity_of'
-require '../lib/extensions'
+dir = File.dirname(__FILE__)
+$LOAD_PATH << dir unless $LOAD_PATH.include?(dir)
 require 'test/unit'
+require 'test/rails_root/config/environment'
+require 'active_record'
+require 'lib/validates_email_veracity_of'
+require 'lib/extensions'
 
 
 class Email < ActiveRecord::Base

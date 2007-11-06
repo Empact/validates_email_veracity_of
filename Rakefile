@@ -7,8 +7,8 @@ task :default => :test
 
 desc 'Test the Email Veracity plugin.'
 Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.pattern = 'test/**/*_test.rb'
+  #t.libs << 'lib'
+  t.pattern = 'test/*_test.rb'
   t.verbose = true
 end
 

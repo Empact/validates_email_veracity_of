@@ -1,5 +1,7 @@
+dir = File.dirname(__FILE__)
+$LOAD_PATH << dir unless $LOAD_PATH.include?(dir)
 require 'test/unit'
-require '../lib/validates_email_veracity_of'
+require 'lib/validates_email_veracity_of'
 
 
 class DomainTest < Test::Unit::TestCase
