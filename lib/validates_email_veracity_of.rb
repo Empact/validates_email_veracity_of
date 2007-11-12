@@ -48,7 +48,8 @@ class ValidatesEmailVeracityOf
     
     # Domains that we know have mail servers
     def self.known_domains
-      %w[ hotmail.com gmail.com rogers.com mac.com sympatico.ca msn.com ]
+      %w[ aol.com gmail.com hotmail.com mac.com msn.com
+      rogers.com sympatico.ca yahoo.com ]
     end
     
     def domain
