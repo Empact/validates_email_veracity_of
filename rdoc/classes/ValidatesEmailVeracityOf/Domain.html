@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ValidatesEmailVeracityOf::Domain</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ValidatesEmailVeracityOf::Domain</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/validates_email_veracity_of_rb.html">
+                lib/validates_email_veracity_of.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Defines a domain and contains methods used to retrieve information from it
+such as mail exchange and address server information.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000006">address_servers</a>&nbsp;&nbsp;
+      <a href="#M000007">exchange_servers</a>&nbsp;&nbsp;
+      <a href="#M000008">servers_in</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">name</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="#M000006" class="method-signature">
+          <span class="method-name">address_servers</span><span class="method-args">(options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of server objects for address server the domain&#8216;s A
+record, if the domain does not exist, it will return an empty array. If it
+times out, nil is returned.
+</p>
+<h4>Options</h4>
+<ul>
+<li><b>timeout</b>
+
+<ul>
+<li>Sets a time (in seconds) that the method will time out and return nil. The
+default is two.
+
+</li>
+</ul>
+</li>
+</ul>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/validates_email_veracity_of.rb, line 49</span>
+49:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">address_servers</span>(<span class="ruby-identifier">options</span> = {})
+50:       <span class="ruby-identifier">servers_in</span> <span class="ruby-identifier">:address</span>, <span class="ruby-identifier">options</span>
+51:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="#M000007" class="method-signature">
+          <span class="method-name">exchange_servers</span><span class="method-args">(options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of server objects for each exchange server in the
+domain&#8216;s MX record, if the domain does not exist, it will return an
+empty array. If it times out, nil is returned.
+</p>
+<h4>Options</h4>
+<ul>
+<li><b>timeout</b>
+
+<ul>
+<li>Sets a time (in seconds) that the method will time out and return nil. The
+default is two.
+
+</li>
+</ul>
+</li>
+</ul>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000007-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/validates_email_veracity_of.rb, line 60</span>
+60:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exchange_servers</span>(<span class="ruby-identifier">options</span> = {})
+61:       <span class="ruby-identifier">servers_in</span> <span class="ruby-identifier">:exchange</span>, <span class="ruby-identifier">options</span>
+62:     <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Protected Instance methods</h3>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="#M000008" class="method-signature">
+          <span class="method-name">servers_in</span><span class="method-args">(record, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of server objects from the domain using the specified
+method. If the domain does not exist an empty array is returned. If the
+process times out, nil is returned.
+</p>
+<h4>Arguments</h4>
+<ul>
+<li><b>record</b>
+
+<ul>
+<li>Either <tt>:exchange</tt> to return mail exchange servers (MX) or
+<tt>:address</tt> to return primary address servers (A)
+
+</li>
+</ul>
+</li>
+</ul>
+<h4>Options</h4>
+<ul>
+<li><b>timeout</b>
+
+<ul>
+<li>Sets a time (in seconds) that the method will time out and return nil. The
+default is two.
+
+</li>
+</ul>
+</li>
+</ul>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/validates_email_veracity_of.rb, line 76</span>
+76:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">servers_in</span>(<span class="ruby-identifier">record</span>, <span class="ruby-identifier">options</span> = {})
+77:         <span class="ruby-identifier">type</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>
+78:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'exchange'</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Resolv</span><span class="ruby-operator">::</span><span class="ruby-constant">DNS</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span><span class="ruby-operator">::</span><span class="ruby-constant">IN</span><span class="ruby-operator">::</span><span class="ruby-constant">MX</span>
+79:           <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'address'</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Resolv</span><span class="ruby-operator">::</span><span class="ruby-constant">DNS</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span><span class="ruby-operator">::</span><span class="ruby-constant">IN</span><span class="ruby-operator">::</span><span class="ruby-constant">A</span>
+80:         <span class="ruby-keyword kw">end</span>
+81:         <span class="ruby-identifier">st</span> = <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-identifier">timeout</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">:timeout</span>, <span class="ruby-value">2</span>)) <span class="ruby-keyword kw">do</span>
+82:           <span class="ruby-constant">Resolv</span><span class="ruby-operator">::</span><span class="ruby-constant">DNS</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">getresources</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span>).<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">servers</span>, <span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+83:             <span class="ruby-identifier">servers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Server</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">record</span>).<span class="ruby-identifier">to_s</span>)
+84:           <span class="ruby-keyword kw">end</span>
+85:         <span class="ruby-keyword kw">end</span>
+86:        <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>
+87:         <span class="ruby-keyword kw">nil</span>
+88:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

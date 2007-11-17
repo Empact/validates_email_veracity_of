@@ -1,9 +1,15 @@
+# Contains the actual logic behind the plugin.
 class ValidatesEmailVeracityOf
   
   
-  class MailServer
+  # Defines a server contains methods used to retrieve information from it.
+  class Server
     
     attr_accessor :name
+    
+    def to_s #:nodoc:
+      name
+    end
     
     def initialize(name = '')
       self.name = name
@@ -12,6 +18,8 @@ class ValidatesEmailVeracityOf
   end
   
   
+  # Defines a domain and contains methods used to retrieve information from it such
+  # as mail exchange and address server information.
   class Domain
     
     require 'resolv'
@@ -19,29 +27,79 @@ class ValidatesEmailVeracityOf
     
     attr_accessor :name
     
-    def initialize(name = '')
+    # Creates a new Domain object, optionally accepts a domain as an argument.
+    # ==== Example
+    # <tt>Domain.new('gmail.com').exchange_servers # => ["ms1.google.com",
+    # "ms2.google.com", ...]</tt>
+    def initialize(name = '') #:nodoc:
       self.name = name
     end
     
-    # Returns an array of mail server objects for the provided domain, if the domain
-    # does not exist, it will return an empty array. If it times out, nil is returned.
-    def mail_servers(options = {})
-      st = Timeout::timeout(options.fetch(:timeout, 2)) do
-        dns = Resolv::DNS.new
-        type = Resolv::DNS::Resource::IN::MX
-        dns.getresources(name, type).collect{|ms| MailServer.new(ms.exchange.to_s)}
-      end
-     rescue Timeout::Error
-      nil
+    def to_s #:nodoc:
+      name
     end
+    
+    # Returns an array of server objects for address server the domain's A record, if
+    # the domain does not exist, it will return an empty array.  If it times out, nil
+    # is returned.
+    # ==== Options
+    # * *timeout*
+    #   - Sets a time (in seconds) that the method will time out and return nil.  The
+    #     default is two.
+    def address_servers(options = {})
+      servers_in :address, options
+    end
+    
+    # Returns an array of server objects for each exchange server in the domain's MX
+    # record, if the domain does not exist, it will return an empty array. If it times
+    # out, nil is returned.
+    # ==== Options
+    # * *timeout*
+    #   - Sets a time (in seconds) that the method will time out and return nil.  The
+    #     default is two.
+    def exchange_servers(options = {})
+      servers_in :exchange, options
+    end
+    
+    protected
+      # Returns an array of server objects from the domain using the specified method.
+      # If the domain does not exist an empty array is returned.  If the process times
+      # out, nil is returned.
+      # ==== Arguments
+      # * *record*
+      #   - Either <tt>:exchange</tt> to return mail exchange servers (MX) or
+      #     <tt>:address</tt> to return primary address servers (A)
+      # ==== Options
+      # * *timeout*
+      #   - Sets a time (in seconds) that the method will time out and return nil.  The
+      #     default is two.
+      def servers_in(record, options = {})
+        type = case record.to_s.downcase
+          when 'exchange' : Resolv::DNS::Resource::IN::MX
+          when 'address' : Resolv::DNS::Resource::IN::A
+        end
+        st = Timeout::timeout(options.fetch(:timeout, 2)) do
+          Resolv::DNS.new.getresources(name, type).inject([]) do |servers, s|
+            servers << Server.new(s.send(record).to_s)
+          end
+        end
+       rescue Timeout::Error
+        nil
+      end
     
   end
   
   
+  # Defines an email address and contains methods to perform things needed in order
+  # to validate it.
   class EmailAddress
     
     attr_accessor :address
     
+    # Creates a new EmailAddress object, optionally accepts an email address as an
+    # argument.
+    # ==== Example
+    # <tt>EmailAddress.new('heycarsten@gmail.com').domain # => "gmail.com"</tt>
     def initialize(email = '')
       self.address = email
     end
@@ -60,17 +118,28 @@ class ValidatesEmailVeracityOf
       address =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
     end
     
-    # Checks if the email address' domain has any mail servers associated to it,
-    # if it does then it will return true, if it does not then it will return false
-    # if it times out, it will return false or nil if the fail_on_timeout option is
-    # specified.
-    def domain_has_mail_servers?(options = {})
+    # Checks if the email address' domain has any servers in it's mail exchange (MX)
+    # or address (A) records.  If it does then true is returned, otherwise false is
+    # returned.  If the lookup times out, it will return false (or nil if the
+    # :fail_on_timeout option is specified.)  Additionally the secondary (A record)
+    # lookup can be turned off (if your really picky) by passing in the option
+    # :mx_only => true.
+    # ==== Options
+    # * *mx_only*
+    #   - The domain is only checked for the presence of mail exchange servers, the
+    #     address record is ignored.
+    # * *timeout*
+    #   - Time (in seconds) before the domain lookup is skipped. Default is two.
+    # * *fail_on_timeout*
+    #   - Causes validation to fail if a timeout occurs.
+    def domain_has_servers?(options = {})
       return true if EmailAddress.known_domains.include?(domain.name.downcase)
-      mail_servers = domain.mail_servers(options)
-      if mail_servers.nil?
+      servers = domain.exchange_servers(options)
+      servers | domain.address_servers(options) if servers.blank? && !options[:mx_only]
+      if servers.nil?
         options.fetch(:fail_on_timeout, true) ? nil : true
       else
-        !mail_servers.empty?
+        !servers.empty?
       end
     end
     

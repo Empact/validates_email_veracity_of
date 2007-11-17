@@ -2,17 +2,21 @@
 
 Author:: Carsten Nielsen (mailto:carsten.nielsen@savvica.com)
 License:: MIT
+Type:: Rails Validation Plugin
 
-Validates an email address for well-formedness and verifies it's domain by checking if there are
-any mail servers associated with it.
+Validates an email address for well-formedness and verifies it's domain by checking if it has
+any MX or A records.
 
 
-== Options
+=== Options
 
 * *message*
   - Changes the default error message.
 * *domain_check*
-  - Skips domain MX lookup unless true.
+  - Mail exchange and address record lookup are skipped if false.
+* *mx_only*
+  - When set, only mail exchange servers (MX) are looked up and the address server (A)
+    lookup is skipped.
 * *timeout*
   - Time (in seconds) before the domain lookup is skipped. Default is 2.
 * *fail_on_timeout*
@@ -21,12 +25,14 @@ any mail servers associated with it.
   - Changes the default timeout error message.
 
 
-== Examples
+=== Examples
 
-* <tt>validates_email_veracity_of :email_address, :message => 'is not correct.'</tt>
+* <tt>validates_email_veracity_of :email, :message => 'is not correct.'</tt>
   - Changes the default error message from 'is invalid.' to 'is not correct.'
 * <tt>validates_email_veracity_of :email, :domain_check => false</tt>
-  - Domain MX lookup is skipped.
+  - Mail exchange and address record lookup is skipped.
+* <tt>validates_email_veracity_of :email, :mx_only => true</tt>
+  - Address record lookup is skipped but the domain is still checked for mail exchange servers.
 * <tt>validates_email_veracity_of :email, :timeout => 0.5</tt>
   - Causes the domain lookup to timeout if it does not complete within half a second.
 * <tt>validates_email_veracity_of :email, :fail_on_timeout => true, :timeout_message => 'is invalid.'</tt>
@@ -34,7 +40,8 @@ any mail servers associated with it.
     to obfuscate it.
 
 
-== Running The Tests
+=== Running The Tests
 
-* You will need to be connected to the internet to utilize the remote features.
+* You will need to be connected to the internet to utilize the remote features and to
+  properly run the tests.
   - <tt>> rake test</tt>
