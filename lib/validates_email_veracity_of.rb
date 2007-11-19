@@ -31,7 +31,7 @@ class ValidatesEmailVeracityOf
     # ==== Example
     # <tt>Domain.new('gmail.com').exchange_servers # => ["ms1.google.com",
     # "ms2.google.com", ...]</tt>
-    def initialize(name = '') #:nodoc:
+    def initialize(name = '')
       self.name = name
     end
     
@@ -104,16 +104,22 @@ class ValidatesEmailVeracityOf
       self.address = email
     end
     
-    # Domains that we know have mail servers
+    # Domains that we know have mail servers such as gmail.com, aol.com and
+    # yahoo.com.
     def self.known_domains
       %w[ aol.com gmail.com hotmail.com mac.com msn.com
       rogers.com sympatico.ca yahoo.com ]
     end
     
+    # Returns the domain portion of the email address.
+    # ==== Example
+    # <tt>EmailAddress.new('heycarsten@gmail.com').domain # => "gmail.com"</tt>
     def domain
       Domain.new(address.include?('@') ? address.split('@')[1].strip : '')
     end
     
+    # Verifies the email address for well-formedness against a well-known pattern.
+    # Note that it will not verifiy all RFC 2822 valid addresses.
     def pattern_is_valid?
       address =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
     end

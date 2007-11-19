@@ -30,7 +30,7 @@ any MX or A records.
 * <tt>validates_email_veracity_of :email, :message => 'is not correct.'</tt>
   - Changes the default error message from 'is invalid.' to 'is not correct.'
 * <tt>validates_email_veracity_of :email, :domain_check => false</tt>
-  - Mail exchange and address record lookup is skipped.
+  - Mail exchange and address record lookups are skipped.
 * <tt>validates_email_veracity_of :email, :mx_only => true</tt>
   - Address record lookup is skipped but the domain is still checked for mail exchange servers.
 * <tt>validates_email_veracity_of :email, :timeout => 0.5</tt>

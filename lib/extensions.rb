@@ -31,8 +31,8 @@ module ActiveRecord
       #   - Causes the validation to fail on timeout and changes the error message to 'is invalid.'
       #     to obfuscate it.
       # * <tt>validates_email_veracity_of :email, :mx_only => true</tt>
-      #   - The validator will only check the domain for mail server (MX records,) ignoring primary
-      #     servers (A records.)
+      #   - The validator will only check the domain for mail exchange (MX) servers, ignoring address
+      #     servers (A) records.
       def validates_email_veracity_of(*attr_names)
         configuration = {
           :message => 'is invalid.',
