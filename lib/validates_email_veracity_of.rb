@@ -141,7 +141,7 @@ class ValidatesEmailVeracityOf
     def domain_has_servers?(options = {})
       return true if EmailAddress.known_domains.include?(domain.name.downcase)
       servers = domain.exchange_servers(options)
-      servers | domain.address_servers(options) if servers.blank? && !options[:mx_only]
+      servers ||= domain.address_servers(options) if servers.blank? && !options[:mx_only]
       if servers.nil?
         options.fetch(:fail_on_timeout, true) ? nil : true
       else
