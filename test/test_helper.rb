@@ -45,7 +45,8 @@ class Test::Unit::TestCase #:nodoc:
       'SomeoneNice@SomePlace.com',
       'joe.blow@domain.co.uk',
       'joe.blow_2@web-site.net',
-      'c00ki3@m0nst3r.org']
+      'c00ki3@m0nst3r.org',
+      'test+heycarsten@gmail.com']
     end
     
     def malformed_addresses
