@@ -3,7 +3,7 @@ module ActiveRecord
     module ClassMethods
       
       # Validates the form of an email address and verifies it's domain by checking if there are any
-      # mail servers associated with it.
+      # mail exchange or address servers associated with it.
       #
       # ==== Options
       # * <b>message</b>
@@ -19,6 +19,11 @@ module ActiveRecord
       # * <b>mx_only</b>
       #   - When set, only mail exchange servers (MX) are looked up and the address server (A)
       #     lookup is skipped.
+      # * <b>invalid_domains</b>
+      #   - An array of domain names that are not to be used. Useful for stuff like dodgeit.com
+      #     and other services.
+      # * <b>invalid_domain_message</b>
+      #   - Changes the default invalid domain error message.
       #
       # ==== Examples
       # * <tt>validates_email_veracity_of :email, :message => 'is not correct.'</tt>
@@ -33,12 +38,16 @@ module ActiveRecord
       # * <tt>validates_email_veracity_of :email, :mx_only => true</tt>
       #   - The validator will only check the domain for mail exchange (MX) servers, ignoring address
       #     servers (A) records.
+      # * <tt>validates_email_veracity_of :email, :invalid_domains => %w[dodgeit.com harvard.edu]</tt>
+      #   - Any email addresses @dodgeit.com or @harvard.edu will be rejected.
       def validates_email_veracity_of(*attr_names)
         configuration = {
           :message => 'is invalid.',
           :timeout_message => 'domain is currently unreachable, try again later.',
+          :invalid_domain_message => 'provider is not supported, try another email address.',
           :timeout => 2,
           :domain_check => true,
+          :invalid_domains => [],
           :mx_only => false,
           :fail_on_timeout => false
         }
@@ -47,6 +56,7 @@ module ActiveRecord
           next if value.blank?
           email = ValidatesEmailVeracityOf::EmailAddress.new(value)
           message = :message unless email.pattern_is_valid?
+          message = :invalid_domain_message unless email.domain_is_valid?(configuration)
           if configuration[:domain_check] && !message
             message = case email.domain_has_servers?(configuration)
               when nil then :timeout_message

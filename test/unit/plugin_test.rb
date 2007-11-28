@@ -28,9 +28,15 @@ class ValidatesEmailVeracityOfTest < Test::Unit::TestCase
     end
   end
   
-  def text_email_address_with_mx_lookup_only
+  def test_email_address_with_mx_lookup_only
     real_addresses.each do |email|
       assert EmailMxOnly.new(:address => email).valid?, 'Should validate.'
+    end
+  end
+  
+  def test_email_address_with_invalid_domains
+    %w[carsten@invalid.com joe_smith@invalid.ca i_am@surely-not-valid.net].each do |email|
+      assert !EmailInvalidDomains.new(:address => email).valid?, 'Should not validate.'
     end
   end
   
