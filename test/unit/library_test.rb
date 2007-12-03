@@ -78,4 +78,9 @@ class EmailAddressTest < Test::Unit::TestCase
     assert_equal ValidatesEmailVeracityOf::Domain, email.domain.class, 'Should still have a domain object.'
   end
   
+  def test_an_object_with_an_address_but_no_domain
+    email = ValidatesEmailVeracityOf::EmailAddress.new('niltor@')
+    assert_equal '', email.domain.name, 'Should have a domain object with no name.'
+  end
+  
 end

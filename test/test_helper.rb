@@ -53,6 +53,8 @@ class Test::Unit::TestCase #:nodoc:
       ['$#@%#@$%@#$%@#$%',
       'fake',
       'Do.Not.work',
+      'nobody@',
+      '@',
       '@noWhere.com',
       'hi*mom@%#+.&',
       '#$%^&$',

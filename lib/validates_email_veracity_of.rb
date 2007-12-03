@@ -132,7 +132,7 @@ class ValidatesEmailVeracityOf
     # ==== Example
     # <tt>EmailAddress.new('heycarsten@gmail.com').domain # => "gmail.com"</tt>
     def domain
-      Domain.new(address.include?('@') ? address.split('@')[1].strip : '')
+      Domain.new((address.split('@')[1] || '').strip)
     end
     
     # Verifies the email address for well-formedness against a well-known pattern.
