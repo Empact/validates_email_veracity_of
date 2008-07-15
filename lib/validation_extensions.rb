@@ -1,7 +1,7 @@
 module ActiveRecord
   module Validations
     module ClassMethods
-      
+
       # Validates the form of an email address and verifies it's domain by checking if there are any
       # mail exchange or address servers associated with it.
       #
@@ -66,7 +66,7 @@ module ActiveRecord
           record.errors.add(attr_name, configuration[message]) if message
         end
       end
-      
+
     end
   end
 end
