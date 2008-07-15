@@ -34,6 +34,18 @@ class ValidatesEmailVeracityOf
       name
     end
 
+    # Checks the email's domain against any invalid domains passed in the options
+    # hash.  This is useful when you don't want addresses from providers such as
+    # dodgeit.com.
+    # ==== Options
+    # * *invalid_domains*
+    #   - An array of strings that indicate invalid domain names.
+    # ==== Example
+    # <tt>EmailAddress.new('carsten@dodgeit.com').domain_is_valid?(:invalid_domains => ['dodgeit.com']) # => false</tt>
+    def valid?(options = {})
+      !options[:invalid_domains] || !options[:invalid_domains].include?(name.downcase)
+    end
+
     def servers(options = {})
       returning @servers = [] do
         @servers << exchange_servers(options)
@@ -112,23 +124,6 @@ class ValidatesEmailVeracityOf
     def self.known_domains
       %w[ aol.com gmail.com hotmail.com mac.com msn.com
       rogers.com sympatico.ca yahoo.com ]
-    end
-
-    # Checks the email's domain against any invalid domains passed in the options
-    # hash.  This is useful when you don't want addresses from providers such as
-    # dodgeit.com.
-    # ==== Options
-    # * *invalid_domains*
-    #   - An array of strings that indicate invalid domain names.
-    # ==== Example
-    # <tt>EmailAddress.new('carsten@dodgeit.com').domain_is_valid?(:invalid_domains => ['dodgeit.com']) # => false</tt>
-    def domain_is_valid?(options = {})
-      configuration = { :invalid_domains => nil }.update(options)
-      return true unless configuration[:invalid_domains]
-      unless configuration[:invalid_domains].is_a?(Array)
-        raise ArgumentError, 'invalid_domains must be an Array'
-      end
-      !configuration[:invalid_domains].include?(domain.name.downcase)
     end
 
     # Returns the domain portion of the email address.

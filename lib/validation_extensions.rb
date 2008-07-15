@@ -56,7 +56,7 @@ module ActiveRecord
           next if value.blank?
           email = ValidatesEmailVeracityOf::EmailAddress.new(value)
           message = :message unless email.pattern_is_valid?
-          message = :invalid_domain_message unless email.domain_is_valid?(configuration)
+          message = :invalid_domain_message unless email.domain.valid?(configuration)
           if configuration[:domain_check] && !message
             message = case email.domain_has_servers?(configuration)
               when nil then :timeout_message
