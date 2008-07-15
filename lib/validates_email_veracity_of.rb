@@ -79,9 +79,13 @@ class ValidatesEmailVeracityOf
           when 'address' : Resolv::DNS::Resource::IN::A
         end
         st = Timeout::timeout(options.fetch(:timeout, 2)) do
-          Resolv::DNS.new.getresources(name, type).inject([]) do |servers, s|
-            servers << Server.new(s.send(record).to_s)
+          servers = []
+          Resolv::DNS.open do |dns|
+            dns.getresources(name, type).each do |s|
+              servers << Server.new(s.send(record).to_s)
+            end
           end
+          servers
         end
        rescue Timeout::Error
         nil
