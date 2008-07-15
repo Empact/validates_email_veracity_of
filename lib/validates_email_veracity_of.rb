@@ -7,7 +7,7 @@ class ValidatesEmailVeracityOf
     require 'resolv'
     require 'timeout'
 
-    attr_accessor :name
+    attr_reader :name
     delegate :to_s, :to => :name
 
     # Creates a new Domain object, optionally accepts a domain as an argument.
@@ -121,7 +121,7 @@ class ValidatesEmailVeracityOf
   # Defines an email address and contains methods to perform things needed in order
   # to validate it.
   class EmailAddress
-    attr_accessor :address
+    attr_reader :address
 
     # Creates a new EmailAddress object, optionally accepts an email address as an
     # argument.
