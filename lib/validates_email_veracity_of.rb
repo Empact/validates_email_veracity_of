@@ -1,19 +1,6 @@
 # Contains the actual logic behind the plugin.
 class ValidatesEmailVeracityOf
 
-  # Defines a server contains methods used to retrieve information from it.
-  class Server
-    attr_accessor :name
-
-    def to_s #:nodoc:
-      name
-    end
-
-    def initialize(name = '')
-      self.name = name
-    end
-  end
-
   # Defines a domain and contains methods used to retrieve information from it such
   # as mail exchange and address server information.
   class Domain
@@ -96,7 +83,7 @@ class ValidatesEmailVeracityOf
         servers = Timeout::timeout(options.fetch(:timeout, 2)) do
           Resolv::DNS.open do |dns|
             dns.getresources(name, type).collect do |s|
-              Server.new(s.send(record).to_s)
+              s.send(record).to_s
             end
           end
         end
