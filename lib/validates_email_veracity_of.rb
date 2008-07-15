@@ -34,6 +34,15 @@ class ValidatesEmailVeracityOf
       name
     end
 
+    def servers(options = {})
+      return @servers if @servers
+
+      @servers = []
+      @servers << exchange_servers(options)
+      @servers << address_servers(options) unless options[:mx_only]
+      @servers.flatten
+    end
+
     # Returns an array of server objects for address server the domain's A record, if
     # the domain does not exist, it will return an empty array.  If it times out, nil
     # is returned.
@@ -152,10 +161,7 @@ class ValidatesEmailVeracityOf
     #   - Causes validation to fail if a timeout occurs.
     def domain_has_servers?(options = {})
       return true if EmailAddress.known_domains.include?(domain.name.downcase)
-      servers = []
-      servers << domain.exchange_servers(options)
-      servers << domain.address_servers(options) if !options[:mx_only]
-      servers.flatten!
+      servers = domain.servers(options)
       if (servers.size - servers.nitems) > 0
         options.fetch(:fail_on_timeout, true) ? nil : true
       else
