@@ -35,12 +35,11 @@ class ValidatesEmailVeracityOf
     end
 
     def servers(options = {})
-      return @servers if @servers
-
-      @servers = []
-      @servers << exchange_servers(options)
-      @servers << address_servers(options) unless options[:mx_only]
-      @servers.flatten
+      returning @servers = [] do
+        @servers << exchange_servers(options)
+        @servers << address_servers(options) unless options[:mx_only]
+        @servers.flatten!
+      end
     end
 
     # Returns an array of server objects for address server the domain's A record, if
