@@ -14,7 +14,7 @@ class ValidatesEmailVeracityOf
     # <tt>Domain.new('gmail.com').exchange_servers # => ["ms1.google.com",
     # "ms2.google.com", ...]</tt>
     def initialize(name = '')
-      self.name = name
+      @name = name
     end
 
     def to_s #:nodoc:
@@ -34,11 +34,12 @@ class ValidatesEmailVeracityOf
     end
 
     def servers(options = {})
-      returning @servers = [] do
-        @servers << exchange_servers(options)
+      unless @servers
+        @servers = [exchange_servers(options)]
         @servers << address_servers(options) unless options[:mx_only]
         @servers.flatten!
       end
+      @servers
     end
 
     # Returns an array of server objects for address server the domain's A record, if
@@ -76,11 +77,10 @@ class ValidatesEmailVeracityOf
       #   - Sets a time (in seconds) that the method will time out and return nil.  The
       #     default is two.
       def servers_in(record, options = {})
-        type = case record.to_s.downcase
-          when 'exchange' : Resolv::DNS::Resource::IN::MX
-          when 'address' : Resolv::DNS::Resource::IN::A
-        end
-        servers = Timeout::timeout(options.fetch(:timeout, 2)) do
+        type = {'exchange' => Resolv::DNS::Resource::IN::MX,
+                'address'  => Resolv::DNS::Resource::IN::A}.fetch(record.to_s.downcase)
+
+        Timeout::timeout(options.fetch(:timeout, 2)) do
           Resolv::DNS.open do |dns|
             dns.getresources(name, type).collect do |s|
               s.send(record).to_s
@@ -103,7 +103,7 @@ class ValidatesEmailVeracityOf
     # ==== Example
     # <tt>EmailAddress.new('heycarsten@gmail.com').domain # => "gmail.com"</tt>
     def initialize(email = '')
-      self.address = email
+      @address = email
     end
 
     # Domains that we know have mail servers such as gmail.com, aol.com and
