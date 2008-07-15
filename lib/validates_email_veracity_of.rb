@@ -14,12 +14,13 @@ class ValidatesEmailVeracityOf
     # ==== Example
     # <tt>Domain.new('gmail.com').exchange_servers # => ["ms1.google.com",
     # "ms2.google.com", ...]</tt>
-    def initialize(name = '')
-      @name = name
+    def initialize(*args)
+      @options = args.extract_options!
+      @name = args.first || ''
     end
 
-    def timeout?(options = {})
-      servers(options).size != servers(options).nitems
+    def timeout?
+      servers.size != servers.nitems
     end
 
     # Checks the email's domain against any invalid domains passed in the options
@@ -30,8 +31,8 @@ class ValidatesEmailVeracityOf
     #   - An array of strings that indicate invalid domain names.
     # ==== Example
     # <tt>EmailAddress.new('carsten@dodgeit.com').domain_is_valid?(:invalid_domains => ['dodgeit.com']) # => false</tt>
-    def valid?(options = {})
-      !options[:invalid_domains] || !options[:invalid_domains].include?(name.downcase)
+    def valid?
+      !@options[:invalid_domains] || !@options[:invalid_domains].include?(name.downcase)
     end
 
     # Checks if the email address' domain has any servers in it's mail exchange (MX)
@@ -48,19 +49,19 @@ class ValidatesEmailVeracityOf
     #   - Time (in seconds) before the domain lookup is skipped. Default is two.
     # * *fail_on_timeout*
     #   - Causes validation to fail if a timeout occurs.
-    def has_servers?(options = {})
+    def has_servers?
       return true if EmailAddress.known_domains.include?(name.downcase)
-      if timeout?(options)
-        options.fetch(:fail_on_timeout, true) ? nil : true
+      if timeout?
+        @options.fetch(:fail_on_timeout, true) ? nil : true
       else
         !servers.empty?
       end
     end
 
-    def servers(options = {})
+    def servers
       unless @servers
-        @servers = [exchange_servers(options)]
-        @servers << address_servers(options) unless options[:mx_only]
+        @servers = [exchange_servers]
+        @servers << address_servers unless @options[:mx_only]
         @servers.flatten!
       end
       @servers
@@ -73,8 +74,8 @@ class ValidatesEmailVeracityOf
     # * *timeout*
     #   - Sets a time (in seconds) that the method will time out and return nil.  The
     #     default is two.
-    def address_servers(options = {})
-      servers_in :address, options
+    def address_servers
+      servers_in :address
     end
 
     # Returns an array of server objects for each exchange server in the domain's MX
@@ -84,8 +85,8 @@ class ValidatesEmailVeracityOf
     # * *timeout*
     #   - Sets a time (in seconds) that the method will time out and return nil.  The
     #     default is two.
-    def exchange_servers(options = {})
-      servers_in :exchange, options
+    def exchange_servers
+      servers_in :exchange
     end
 
     protected
@@ -100,11 +101,11 @@ class ValidatesEmailVeracityOf
       # * *timeout*
       #   - Sets a time (in seconds) that the method will time out and return nil.  The
       #     default is two.
-      def servers_in(record, options = {})
+      def servers_in(record)
         type = {'exchange' => Resolv::DNS::Resource::IN::MX,
                 'address'  => Resolv::DNS::Resource::IN::A}.fetch(record.to_s.downcase)
 
-        Timeout::timeout(options.fetch(:timeout, 2)) do
+        Timeout::timeout(@options.fetch(:timeout, 2)) do
           Resolv::DNS.open do |dns|
             dns.getresources(name, type).collect do |s|
               s.send(record).to_s
@@ -126,8 +127,9 @@ class ValidatesEmailVeracityOf
     # argument.
     # ==== Example
     # <tt>EmailAddress.new('heycarsten@gmail.com').domain # => "gmail.com"</tt>
-    def initialize(email = '')
-      @address = email
+    def initialize(*args)
+      @options = args.extract_options!
+      @address = args.first || ''
     end
 
     # Domains that we know have mail servers such as gmail.com, aol.com and
@@ -141,7 +143,7 @@ class ValidatesEmailVeracityOf
     # ==== Example
     # <tt>EmailAddress.new('heycarsten@gmail.com').domain # => "gmail.com"</tt>
     def domain
-      Domain.new((address.split('@')[1] || '').strip)
+      Domain.new((address.split('@')[1] || '').strip, @options)
     end
 
     # Verifies the email address for well-formedness against a well-known pattern.
