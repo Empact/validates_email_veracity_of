@@ -16,3 +16,11 @@ mysql:
   username: root
   password:
   database: validates_email_veracity_of_validation_test
+
+development:
+  adapter: sqlite3
+  dbfile: db/development.sqlite3
+
+test:
+  adapter: sqlite3
+  dbfile: db/test.sqlite3
