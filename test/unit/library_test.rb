@@ -46,7 +46,7 @@ class EmailAddressTest < Test::Unit::TestCase
 
   def test_domain_has_servers_with_no_email_address
     email = ValidatesEmailVeracityOf::EmailAddress.new
-    assert !email.domain_has_servers?(:timeout => 30), 'Should fail gracefully.'
+    assert !email.domain.has_servers?(:timeout => 30), 'Should fail gracefully.'
   end
 
   def test_malformed_email_addresses
@@ -65,12 +65,12 @@ class EmailAddressTest < Test::Unit::TestCase
 
   def test_itsme_at_heycarsten_dot_com
     email = ValidatesEmailVeracityOf::EmailAddress.new('itsme@heycarsten.com')
-    assert email.domain_has_servers?(:timeout => 30), 'Should have servers.'
+    assert email.domain.has_servers?(:timeout => 30), 'Should have servers.'
   end
 
   def test_nobody_at_carstensnowhereland_dot_ca
     email = ValidatesEmailVeracityOf::EmailAddress.new('nobody@carstensnowhereland.ca')
-    assert !email.domain_has_servers?(:timeout => 30), 'Should not have mail servers.'
+    assert !email.domain.has_servers?(:timeout => 30), 'Should not have mail servers.'
   end
 
   def test_an_object_with_no_address

@@ -8,6 +8,7 @@ class ValidatesEmailVeracityOf
     require 'timeout'
 
     attr_accessor :name
+    delegate :to_s, :to => :name
 
     # Creates a new Domain object, optionally accepts a domain as an argument.
     # ==== Example
@@ -17,8 +18,8 @@ class ValidatesEmailVeracityOf
       @name = name
     end
 
-    def to_s #:nodoc:
-      name
+    def timeout?(options = {})
+      servers(options).size != servers(options).nitems
     end
 
     # Checks the email's domain against any invalid domains passed in the options
@@ -31,6 +32,29 @@ class ValidatesEmailVeracityOf
     # <tt>EmailAddress.new('carsten@dodgeit.com').domain_is_valid?(:invalid_domains => ['dodgeit.com']) # => false</tt>
     def valid?(options = {})
       !options[:invalid_domains] || !options[:invalid_domains].include?(name.downcase)
+    end
+
+    # Checks if the email address' domain has any servers in it's mail exchange (MX)
+    # or address (A) records.  If it does then true is returned, otherwise false is
+    # returned.  If the lookup times out, it will return false (or nil if the
+    # :fail_on_timeout option is specified.)  Additionally the secondary (A record)
+    # lookup can be turned off (if your really picky) by passing in the option
+    # :mx_only => true.
+    # ==== Options
+    # * *mx_only*
+    #   - The domain is only checked for the presence of mail exchange servers, the
+    #     address record is ignored.
+    # * *timeout*
+    #   - Time (in seconds) before the domain lookup is skipped. Default is two.
+    # * *fail_on_timeout*
+    #   - Causes validation to fail if a timeout occurs.
+    def has_servers?(options = {})
+      return true if EmailAddress.known_domains.include?(name.downcase)
+      if timeout?(options)
+        options.fetch(:fail_on_timeout, true) ? nil : true
+      else
+        !servers.empty?
+      end
     end
 
     def servers(options = {})
@@ -124,30 +148,6 @@ class ValidatesEmailVeracityOf
     # Note that it will not verifiy all RFC 2822 valid addresses.
     def pattern_is_valid?
       address =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-    end
-
-    # Checks if the email address' domain has any servers in it's mail exchange (MX)
-    # or address (A) records.  If it does then true is returned, otherwise false is
-    # returned.  If the lookup times out, it will return false (or nil if the
-    # :fail_on_timeout option is specified.)  Additionally the secondary (A record)
-    # lookup can be turned off (if your really picky) by passing in the option
-    # :mx_only => true.
-    # ==== Options
-    # * *mx_only*
-    #   - The domain is only checked for the presence of mail exchange servers, the
-    #     address record is ignored.
-    # * *timeout*
-    #   - Time (in seconds) before the domain lookup is skipped. Default is two.
-    # * *fail_on_timeout*
-    #   - Causes validation to fail if a timeout occurs.
-    def domain_has_servers?(options = {})
-      return true if EmailAddress.known_domains.include?(domain.name.downcase)
-      servers = domain.servers(options)
-      if (servers.size - servers.nitems) > 0
-        options.fetch(:fail_on_timeout, true) ? nil : true
-      else
-        !servers.empty?
-      end
     end
   end
 

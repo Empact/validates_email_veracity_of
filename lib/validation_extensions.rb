@@ -58,7 +58,7 @@ module ActiveRecord
           message = :message unless email.pattern_is_valid?
           message = :invalid_domain_message unless email.domain.valid?(configuration)
           if configuration[:domain_check] && !message
-            message = case email.domain_has_servers?(configuration)
+            message = case email.domain.has_servers?(configuration)
               when nil then :timeout_message
               when false then :message
             end
