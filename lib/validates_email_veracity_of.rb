@@ -10,17 +10,24 @@ class ValidatesEmailVeracityOf
     attr_reader :name
     delegate :to_s, :to => :name
 
+    # Domains that we know have mail servers such as gmail.com, aol.com and
+    # yahoo.com.
+    def self.known
+      %w[ aol.com gmail.com hotmail.com mac.com msn.com
+      rogers.com sympatico.ca yahoo.com ]
+    end
+
     # Creates a new Domain object, optionally accepts a domain as an argument.
     # ==== Example
     # <tt>Domain.new('gmail.com').exchange_servers # => ["ms1.google.com",
     # "ms2.google.com", ...]</tt>
     def initialize(*args)
       @options = args.extract_options!
-      @name = args.first || ''
+      @name = (args.first || '').downcase
     end
 
     def timeout?
-      servers.size != servers.nitems
+      servers.any?(&:nil?)
     end
 
     # Checks the email's domain against any invalid domains passed in the options
@@ -32,7 +39,7 @@ class ValidatesEmailVeracityOf
     # ==== Example
     # <tt>EmailAddress.new('carsten@dodgeit.com').domain_is_valid?(:invalid_domains => ['dodgeit.com']) # => false</tt>
     def valid?
-      !@options[:invalid_domains] || !@options[:invalid_domains].include?(name.downcase)
+      !@options[:invalid_domains] || !@options[:invalid_domains].include?(name)
     end
 
     # Checks if the email address' domain has any servers in it's mail exchange (MX)
@@ -50,7 +57,7 @@ class ValidatesEmailVeracityOf
     # * *fail_on_timeout*
     #   - Causes validation to fail if a timeout occurs.
     def has_servers?
-      return true if EmailAddress.known_domains.include?(name.downcase)
+      return true if Domain.known.include? name
       if timeout?
         @options.fetch(:fail_on_timeout, true) ? nil : true
       else
@@ -130,13 +137,6 @@ class ValidatesEmailVeracityOf
     def initialize(*args)
       @options = args.extract_options!
       @address = args.first || ''
-    end
-
-    # Domains that we know have mail servers such as gmail.com, aol.com and
-    # yahoo.com.
-    def self.known_domains
-      %w[ aol.com gmail.com hotmail.com mac.com msn.com
-      rogers.com sympatico.ca yahoo.com ]
     end
 
     # Returns the domain portion of the email address.
