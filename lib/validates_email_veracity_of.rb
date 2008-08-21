@@ -1,5 +1,5 @@
 # Contains the actual logic behind the plugin.
-class ValidatesEmailVeracityOf
+class ValidatesEmailVeracityOf #:nodoc:
 
   # Defines a domain and contains methods used to retrieve information from it such
   # as mail exchange and address server information.

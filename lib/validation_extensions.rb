@@ -1,5 +1,5 @@
-module ActiveRecord
-  module Validations
+module ActiveRecord #:nodoc:
+  module Validations #:nodoc:
     module ClassMethods
 
       # Validates the form of an email address and verifies it's domain by checking if there are any
